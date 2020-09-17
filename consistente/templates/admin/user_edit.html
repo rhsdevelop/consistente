@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="container theme-showcase">
+    <div class="card">
+        <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Dados do usuário</h3>
+        <div class="card-body">
+            <form action="" method="POST">
+                <div class="form-group">
+                    {{ form.csrf_token }}
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" align="right">Usuário</label>
+                        {{ form.username (class_="col-lg-9", placeholder="usuário")}}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" align="right">Nome completo</label>
+                        {{ form.name (class_="col-lg-9", placeholder="nome completo")}}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" align="right">Email</label>
+                        {{ form.email (class_="col-lg-9", placeholder="email")}}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" align="right">Telefone</label>
+                        {{ form.phone (class_="col-lg-9", placeholder="telefone")}}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" align="right">Senha</label>
+                        {{ form.password (class_="col-lg-9", placeholder="****")}}
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label" align="right">Status</label>
+                        {{ form.active (class_="")}} <label>Ativo</label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default" style="float: right;">Confirmar</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}

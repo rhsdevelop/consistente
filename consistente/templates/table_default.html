@@ -1,0 +1,33 @@
+<div id="table" class="table-editable">
+    <table class="table table-bordered table-responsive-md table-striped text-center" style="line-height: 0.4;">
+        <span class="table-add float-right mb-3 mr-2">
+            <a href="{{ table.href }}">
+                <i class="icon ion-android-add" style="font-size: 48px;"></i>
+            </a>
+        </span>
+        <thead>
+            <tr>
+                {% for header in table.headers %}
+                <th class="text-center">{{ header }}</th>
+                {% endfor %}
+            <tr>
+        </thead>
+        <tbody>
+            {% for data in table.data %}
+            <tr>
+                {% for item in data %}
+                    {% if 't' in item %}
+                    <td class="pt-3-half">{{ item.t }}</td>
+                    {% else %}
+                    <td class="table-remove">
+                        <span class="table-remove"><button type="button" class="btn btn-rounded btn-rounded btn-sm my-0" style="line-height: 0.6;">
+                            <a href={{item.b.href}}>{{ item.b.caption }}</a></button>
+                        </span>
+                    </td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
